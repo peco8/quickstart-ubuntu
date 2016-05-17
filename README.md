@@ -22,9 +22,16 @@ $ ssh root@192.168.59.103 -p 49513
 [Install the Arukas CLI.](https://github.com/arukasio/cli)
 
 or If you have docker installed already,
+
+Public key authentication
 ```
-docker run --rm -e ARUKAS_JSON_API_TOKEN=<APIT_OKEN> -e ARUKAS_JSON_API_SECRET=<SECRET_KEY> arukasio/arukas run --instances=3 --mem=512 -ports=80:tcp peco8/quickstart-php
+docker run --rm -e ARUKAS_JSON_API_TOKEN="69a89479-71d8-47b6-be6d-55be25341c3a" -e ARUKAS_JSON_API_SECRET="Q0spmDezAmHE261oLH9kZojDonnBFHpu3i8miWOiA2voM8e9OVCyAUKnVBrq441j" -e AUTHORIZED_KEY="`cat ~/.ssh/id_rsa.pub`" arukasio/arukas run --instances=3 --mem=512 --ports=22:tcp peco8/quickstart-ubuntu
 ```
+username/password
+```
+docker run --rm -e ARUKAS_JSON_API_TOKEN=<API_TOKEN> -e ARUKAS_JSON_API_SECRET=<SECRET_KEY> arukasio/arukas run --instances=3 --mem=512 --ports=22:tcp peco8/quickstart-ubuntu
+```
+
 ## Author
 
 * Toshiki Inami (<t-inami@arukas.io>)
