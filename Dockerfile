@@ -3,8 +3,6 @@ FROM ubuntu:trusty
 
 MAINTAINER "Toshiki Inami <t-inami@arukas.io>"
 
-# ENV DEBIAN_FRONTEND noninteractive
-
 # Set username/password login as a default
 # public authentication will be enabled with AUTHORIZED_KEY ENV
 ENV AUTHORIZED_KEY none
@@ -25,7 +23,8 @@ RUN chmod +x /start.sh
 # Set the root password for demo
 RUN echo 'root:root' | chpasswd
 
-# Enable Rootlogin and PasswordAuth
+# Configure sshd.conf
+## For username/password login
 RUN sed -i "s/PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 
