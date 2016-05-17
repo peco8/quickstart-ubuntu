@@ -25,7 +25,7 @@ or If you have docker installed already,
 
 Public key authentication
 ```
-docker run --rm -e ARUKAS_JSON_API_TOKEN="69a89479-71d8-47b6-be6d-55be25341c3a" -e ARUKAS_JSON_API_SECRET=<API_TOKEN> -e AUTHORIZED_KEY=<SECRET_KEY> arukasio/arukas run --instances=3 --mem=512 --ports=22:tcp peco8/quickstart-ubuntu
+docker run --rm -e ARUKAS_JSON_API_TOKEN=<API_TOKEN> -e ARUKAS_JSON_API_SECRET=<SECRET_KEY> -e AUTHORIZED_KEY="`cat ~/.ssh/id_rsa.pub`" arukasio/arukas run --instances=3 --mem=512 --ports=22:tcp peco8/quickstart-ubuntu
 ```
 username/password
 ```
