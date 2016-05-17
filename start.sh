@@ -8,7 +8,7 @@ if [ "$AUTHORIZED_KEY" != "none" ]; then
     echo "$AUTHORIZED_KEY" >> /root/.ssh/authorized_keys
 
     # Configure sshd.conf
-    ## Only pubkey authentication
+    ## For pubkey authentication
     sed -i "s/UsePAM.*/UsePAM no/g" /etc/ssh/sshd_config
     sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
 fi
