@@ -11,7 +11,7 @@ $ ssh root@192.168.59.103 -p $(docker port `docker ps -q -n=1` | cut -d':' -f2)
 ```
 
 ##### username/password
-If you want to use your original password instead of the default one ("root"), you can
+If you want to use your original password instead of the default one: "root", you can
 set the environment variable ROOT_PWD to your specific password when running the container:
 ```
 $ docker build --no-cache .
