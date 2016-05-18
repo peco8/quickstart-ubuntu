@@ -6,15 +6,15 @@ Getting start in Arukas wih Ubuntu
 Public key authentication
 ```
 $ docker build --no-cache .
-$ docker run -d -e AUTHORIZED_KEY="`cat ~/.ssh/id_rsa.pub`" -p 49513:22 a90b0e9160d0
-$ ssh root@192.168.59.103 -p 49613
+$ docker run -d -e AUTHORIZED_KEY="`cat ~/.ssh/id_rsa.pub`" -P a90b0e9160d0
+$ ssh root@192.168.59.103 -p $(docker port `docker ps -q` | cut -d':' -f2)
 ```
 
 username/password
 ```
 $ docker build --no-cache .
-$ docker run -d -p 49513:22 a90b0e9160d0
-$ ssh root@192.168.59.103 -p 49513
+$ docker run -d -P a90b0e9160d0
+$ ssh root@192.168.59.103 -p $(docker port `docker ps -q` | cut -d':' -f2)
 ```
 
 ## Deploying to Arukas
