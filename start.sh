@@ -13,4 +13,9 @@ if [ "$AUTHORIZED_KEY" != "none" ]; then
     sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
 fi
 
+if [ "$ROOT_PWD" == "default" ]; then
+    ROOT_PWD="root"
+fi
+echo "root:$ROOT_PWD" | chpasswd
+
 /usr/sbin/sshd -D
