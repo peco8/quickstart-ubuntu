@@ -26,11 +26,11 @@ $ ssh root@192.168.59.103 -p $(docker port `docker ps -q -n=1` | cut -d':' -f2)
 
 or If you have docker installed already,
 
-Public key authentication
+##### Public key authentication
 ```
 docker run --rm -e ARUKAS_JSON_API_TOKEN=<API_TOKEN> -e ARUKAS_JSON_API_SECRET=<SECRET_KEY> -e AUTHORIZED_KEY="`cat ~/.ssh/id_rsa.pub`" arukasio/arukas run --instances=3 --mem=512 --ports=22:tcp peco8/quickstart-ubuntu
 ```
-username/password
+##### username/password
 ```
 docker run --rm -e ARUKAS_JSON_API_TOKEN=<API_TOKEN> -e ARUKAS_JSON_API_SECRET=<SECRET_KEY> arukasio/arukas run --instances=3 --mem=512 --ports=22:tcp peco8/quickstart-ubuntu
 ```
