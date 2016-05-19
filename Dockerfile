@@ -24,7 +24,6 @@ RUN chmod +x /start.sh
 # Configure sshd.conf
 ## For username/password login
 RUN sed -i "s/PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
-RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 
 # Expose 22 for SSH access
 EXPOSE 22
