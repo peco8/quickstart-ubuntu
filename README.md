@@ -5,7 +5,7 @@ Getting start in Arukas wih Ubuntu
 
 ##### Public key authentication
 ```
-$ git clone https://github.com/peco8/quickstart-ubuntu.git
+$ git clone git@github.com:peco8/quickstart-ubuntu.git
 $ cd quickstart-ubuntu
 $ docker build --no-cache .
 $ docker run -d -e AUTHORIZED_KEY="`cat ~/.ssh/id_rsa.pub`" -P a90b0e9160d0
@@ -16,7 +16,7 @@ $ ssh root@192.168.59.103 -p $(docker port `docker ps -q -n=1` | cut -d':' -f2)
 If you want to use your original password instead of the default one: "root", you can
 set the environment variable ROOT_PWD to your specific password when running the container:
 ```
-$ git clone https://github.com/peco8/quickstart-ubuntu.git
+$ git clone git@github.com:peco8/quickstart-ubuntu.git
 $ cd quickstart-ubuntu
 $ docker build --no-cache .
 $ docker run -d -e ROOT_PWD="ubuntu" -P a90b0e9160d0
