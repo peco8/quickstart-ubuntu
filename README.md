@@ -18,8 +18,8 @@ set the environment variable ROOT_PWD to your specific password when running the
 ```
 $ git clone git@github.com:peco8/quickstart-ubuntu.git
 $ cd quickstart-ubuntu
-$ docker build --no-cache .
-$ docker run -d -e ROOT_PWD="ubuntu" -P a90b0e9160d0
+$ docker build --no-cache --tag quickstart-ubuntu .
+$ docker run -d -e ROOT_PWD="ubuntu" -P quickstart-ubuntu
 $ ssh root@192.168.59.103 -p $(docker port `docker ps -q -n=1` | cut -d':' -f2)
 ```
 
