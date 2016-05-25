@@ -9,7 +9,6 @@ $ git clone git@github.com:peco8/quickstart-ubuntu.git
 $ cd quickstart-ubuntu
 $ docker build --no-cache --tag quickstart-ubuntu . 
 $ docker run -d -e AUTHORIZED_KEY="`cat ~/.ssh/id_rsa.pub`" -P quickstart-ubuntu
-$ ssh root@192.168.59.103 -p $(docker port `docker ps -q -n=1` | cut -d':' -f2)
 ```
 
 ##### username/password
@@ -20,9 +19,8 @@ $ git clone git@github.com:peco8/quickstart-ubuntu.git
 $ cd quickstart-ubuntu
 $ docker build --no-cache --tag quickstart-ubuntu .
 $ docker run -d -e ROOT_PWD="ubuntu" -P quickstart-ubuntu
-$ ssh root@192.168.59.103 -p $(docker port `docker ps -q -n=1` | cut -d':' -f2)
 ```
-
+And now you can ssh as root on the container’s IP address  on some port of Docker daemon's host IP address.
 
 ## Deploying to Arukas
 
